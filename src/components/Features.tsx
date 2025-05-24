@@ -1,46 +1,106 @@
-import React from 'react'
+"use client"
+import React, { useEffect, useRef } from 'react';
+import { cn } from '@/lib/utils';
 
 const Features = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-900 to-black text-white">
+    <section className="py-20 bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900 text-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 animate-fade-in-down">Key Features</h2>
-        <p className="text-xl text-center mb-16 animate-fade-in delay-200">Discover what makes our platform the best place to learn.</p>
+        <h2 className="text-4xl font-bold text-center mb-12">Key Features</h2>
+        <p className="text-xl text-center mb-16">Discover what makes our platform the best place to learn.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {/* Feature Card 1 */}
-          <div className="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105 animate-fade-in delay-400">
-            <h3 className="text-2xl font-semibold mb-4">Curated Learning Paths</h3>
-            <p className="text-gray-300">Follow expertly designed paths to master frontend and backend development step-by-step.</p>
-          </div>
+          <FeatureCard
+            title="Curated Learning Paths"
+            description="Follow expertly designed paths to master frontend and backend development step-by-step."
+            index={0}
+          />
           {/* Feature Card 2 */}
-          <div className="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105 animate-fade-in delay-500">
-            <h3 className="text-2xl font-semibold mb-4">Hands-on Projects</h3>
-            <p className="text-gray-300">Apply your knowledge with real-world projects that build your portfolio.</p>
-          </div>
+          <FeatureCard
+            title="Hands-on Projects"
+            description="Apply your knowledge with real-world projects that build your portfolio."
+            index={1}
+          />
           {/* Feature Card 3 */}
-          <div className="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105 animate-fade-in delay-600">
-            <h3 className="text-2xl font-semibold mb-4">Community Support</h3>
-            <p className="text-gray-300">Connect with other learners and mentors to get help and stay motivated.</p>
-          </div>
+          <FeatureCard
+            title="Community Support"
+            description="Connect with other learners and mentors to get help and stay motivated."
+            index={2}
+          />
           {/* Feature Card 4 */}
-          <div className="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105 animate-fade-in delay-700">
-            <h3 className="text-2xl font-semibold mb-4">Regular Updates</h3>
-            <p className="text-gray-300">Stay current with the latest technologies and industry trends.</p>
-          </div>
+          <FeatureCard
+            title="Regular Updates"
+            description="Stay current with the latest technologies and industry trends."
+            index={3}
+          />
           {/* Feature Card 5 */}
-          <div className="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105 animate-fade-in delay-800">
-            <h3 className="text-2xl font-semibold mb-4">Flexible Learning</h3>
-            <p className="text-gray-300">Learn at your own pace, anytime, anywhere, on any device.</p>
-          </div>
+          <FeatureCard
+            title="Flexible Learning"
+            description="Learn at your own pace, anytime, anywhere, on any device."
+            index={4}
+          />
           {/* Feature Card 6 */}
-          <div className="bg-gray-800 p-8 rounded-lg shadow-xl transform transition duration-500 hover:scale-105 animate-fade-in delay-900">
-            <h3 className="text-2xl font-semibold mb-4">Expert Instructors</h3>
-            <p className="text-gray-300">Learn from experienced professionals with real-world expertise.</p>
-          </div>
+          <FeatureCard
+            title="Expert Instructors"
+            description="Learn from experienced professionals with real-world expertise."
+            index={5}
+          />
         </div>
       </div>
     </section>
   );
 }
 
-export default Features
+interface FeatureCardProps {
+  title: string;
+  description: string;
+  index: number;
+}
+
+function FeatureCard({ title, description, index }: FeatureCardProps) {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => {
+      if (cardRef.current) {
+        observer.unobserve(cardRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <div
+      ref={cardRef}
+      className={cn(
+        'resource-card opacity-0 translate-y-8',
+        'bg-white/10 backdrop-blur-lg rounded-xl p-6',
+        'transform transition-all duration-700 ease-out',
+        'hover:bg-white/20 hover:shadow-xl hover:-translate-y-1',
+        'cursor-pointer border border-white/10'
+      )}
+      style={{
+        transitionDelay: `${index * 100}ms`
+      }}
+    >
+      <h3 className="text-2xl font-semibold mb-4">{title}</h3>
+      <p className="text-gray-300">{description}</p>
+    </div>
+  );
+}
+
+export default Features;
