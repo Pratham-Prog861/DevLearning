@@ -3,7 +3,7 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <section className="relative w-full h-screen flex items-center justify-center text-center overflow-hidden bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900 text-white">
+    <section className="relative w-full h-screen flex items-center justify-center text-center overflow-hidden">
       <div className="absolute inset-0 z-0 opacity-30">
         {/* Optional: Add a background pattern or image here */}
       </div>

@@ -41,12 +41,12 @@ const learningModules = [
 
 export default function FrontendDev() {
   return (
-    <div className="min-h-screen w-full p-4 md:p-8">
+    <div className="min-h-screen w-full mt-12 p-4 md:p-8 bg-gradient-to-b from-blue-700 via-purple-700 to-blue-900 text-white">
       <div className="mx-auto max-w-6xl">
-        <h1 className="mb-2 text-3xl font-bold md:text-5xl">
+        <h1 className="mb-2 text-3xl font-bold md:text-5xl text-white">
           Frontend Development Path
         </h1>
-        <p className="mb-8 text-gray-500 dark:text-gray-400">
+        <p className="mb-8 text-gray-300">
           Follow this structured learning path to master frontend development. Each module includes curated video content and helpful resources.
         </p>
 
@@ -54,14 +54,14 @@ export default function FrontendDev() {
           {learningModules.map((module, index) => (
             <div
               key={index}
-              className="overflow-hidden rounded-lg border bg-background p-6"
+              className="overflow-hidden rounded-lg shadow-lg bg-gradient-to-r from-blue-800 via-purple-800 to-blue-900 p-6 transition-transform transform hover:scale-105 border border-gray-700 hover:border-white"
             >
-              <h2 className="mb-4 text-2xl font-semibold">{module.title}</h2>
-              <p className="mb-6 text-gray-500 dark:text-gray-400">
+              <h2 className="mb-4 text-2xl font-semibold text-white">{module.title}</h2>
+              <p className="mb-6 text-gray-300">
                 {module.description}
               </p>
 
-              <div className="mb-6 aspect-video w-full overflow-hidden rounded-lg">
+              <div className="mb-6 aspect-video w-full overflow-hidden rounded-lg shadow-md">
                 <iframe
                   width="100%"
                   height="100%"
@@ -78,7 +78,7 @@ export default function FrontendDev() {
                   <Button
                     key={idx}
                     variant="outline"
-                    className="border-blue-500 text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-950"
+                    className="border-white text-white hover:bg-blue-700"
                     asChild
                   >
                     <a href={resource.url} target="_blank" rel="noopener noreferrer">

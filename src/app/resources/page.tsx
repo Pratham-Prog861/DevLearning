@@ -35,14 +35,14 @@ const resources = [
 
 export default function ResourcesPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-24 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-blue-900 py-24 px-4 sm:px-6 lg:px-8">
       <Spotlight fill="white" className="z-0" />
       <div className="mx-auto max-w-7xl">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-white mb-4 animate-fade-in">
             Development Resources
           </h1>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto animate-fade-in-delayed">
+          <p className="text-gray-300 text-lg max-w-2xl mx-auto animate-fade-in-delayed">
             Curated collection of tools and resources to enhance your development journey
           </p>
         </div>

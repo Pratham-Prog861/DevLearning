@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 
 const Features = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900 text-white">
+    <section className="py-20 bg-gradient-to-br from-blue-700 via-purple-700 to-blue-900 text-white">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12">Key Features</h2>
         <p className="text-xl text-center mb-16">Discover what makes our platform the best place to learn.</p>
@@ -94,7 +94,7 @@ function FeatureCard({ title, description, index }: FeatureCardProps) {
         'cursor-pointer border border-white/10'
       )}
       style={{
-        transitionDelay: `${index * 100}ms`
+        transitionDelay: `${index * 1}ms`
       }}
     >
       <h3 className="text-2xl font-semibold mb-4">{title}</h3>
