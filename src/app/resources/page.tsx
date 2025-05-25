@@ -3,46 +3,51 @@
 import { useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { Spotlight } from '@/components/ui/spotlight';
+import { ExternalLink } from 'lucide-react';
 
 const resources = [
   {
     title: 'Documentation',
     description: 'Official guides and references for web development technologies.',
-    link: 'https://developer.mozilla.org/'
+    link: 'https://developer.mozilla.org/',
+    icon: '📚'
   },
-
   {
     title: 'Code Challenges',
     description: 'Practice coding skills with real-world problems.',
-    link: 'https://leetcode.com/'
+    link: 'https://leetcode.com/',
+    icon: '💻'
   },
   {
     title: 'Developer Tools',
     description: 'Essential tools and extensions for web development.',
-    link: 'https://marketplace.visualstudio.com/'
+    link: 'https://marketplace.visualstudio.com/',
+    icon: '🛠️'
   },
   {
     title: 'Community Forums',
     description: 'Connect with developers and get help with coding questions.',
-    link: 'https://stackoverflow.com/'
+    link: 'https://stackoverflow.com/',
+    icon: '👥'
   },
   {
     title: 'Design Resources',
     description: 'UI/UX design tools and inspiration for developers.',
-    link: 'https://dribbble.com/'
+    link: 'https://dribbble.com/',
+    icon: '🎨'
   }
 ];
 
 export default function ResourcesPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-blue-900 py-24 px-4 sm:px-6 lg:px-8">
-      <Spotlight fill="white" className="z-0" />
+    <div className="min-h-screen bg-white py-24 px-4 sm:px-6 lg:px-8">
+      <Spotlight fill="#A435F0" className="z-0 opacity-20" />
       <div className="mx-auto max-w-7xl">
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-white mb-4 animate-fade-in">
+          <h1 className="text-5xl font-bold text-[#000000] mb-4 animate-fade-in">
             Development Resources
           </h1>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto animate-fade-in-delayed">
+          <p className="text-gray-600 text-xl max-w-2xl mx-auto animate-fade-in-delayed">
             Curated collection of tools and resources to enhance your development journey
           </p>
         </div>
@@ -66,9 +71,10 @@ interface ResourceCardProps {
   description: string;
   link: string;
   index: number;
+  icon: string;
 }
 
-function ResourceCard({ title, description, link, index }: ResourceCardProps) {
+function ResourceCard({ title, description, link, index, icon }: ResourceCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -99,27 +105,37 @@ function ResourceCard({ title, description, link, index }: ResourceCardProps) {
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="block"
+      className="block group"
     >
       <div
         ref={cardRef}
         className={cn(
           'resource-card opacity-0 translate-y-8',
-          'bg-white/10 backdrop-blur-lg rounded-xl p-6',
+          'bg-white rounded-xl p-6',
           'transform transition-all duration-700 ease-out',
-          'hover:bg-white/20 hover:shadow-xl hover:-translate-y-1',
-          'cursor-pointer border border-white/10',
+          'hover:shadow-[0_0_30px_rgba(164,53,240,0.2)] hover:-translate-y-1',
+          'cursor-pointer border border-gray-100',
           'relative overflow-hidden'
         )}
         style={{
           transitionDelay: `${index * 1}ms`
         }}
       >
-        <div className="relative z-10">
-          <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
-          <p className="text-gray-300">{description}</p>
+        <div className="relative z-10 flex items-start gap-4">
+          <span className="text-3xl">{icon}</span>
+          <div className="flex-1">
+            <div className="flex items-center justify-between">
+              <h3 className="text-xl font-semibold text-[#000000] mb-2 group-hover:text-[#A435F0] transition-colors">
+                {title}
+              </h3>
+              <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-[#A435F0] transition-colors" />
+            </div>
+            <p className="text-gray-600">{description}</p>
+          </div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        <div 
+          className="absolute inset-0 bg-gradient-to-r from-[#A435F0]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" 
+        />
       </div>
     </a>
   );
