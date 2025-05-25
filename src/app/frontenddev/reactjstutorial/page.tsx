@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import { Copy, Check } from "lucide-react";
+import { Copy, Check, ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 const ReactJSTutorial = () => {
   const tutorials = [
@@ -84,7 +85,16 @@ function Counter() {
   };
 
   return (
-    <div className="min-h-screen mt-12 bg-white pt-16 pb-12">
+    <div className="min-h-screen mt-12 bg-white pt-16 pb-12 relative">
+      <div className="absolute top-8 left-4 md:left-8">
+        <Link 
+          href="/frontenddev" 
+          className="inline-flex items-center px-4 py-2 text-[#A435F0] hover:text-white border-2 border-[#A435F0] hover:bg-[#A435F0] rounded-sm transition-all duration-300 group"
+        >
+          <ArrowLeft className="w-4 h-4 mr-2 transform group-hover:translate-x-[-2px] transition-transform" />
+          Back to Modules
+        </Link>
+      </div>
       <div className="max-w-4xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-[#000000] mb-6">
           React.js Tutorial
@@ -97,13 +107,29 @@ function Counter() {
         {/* Video Section */}
         <div className="mb-12">
           <h2 className="text-2xl font-semibold text-[#000000] mb-4">
-            Video Tutorial
+            Part 1
           </h2>
           <div className="aspect-video w-full">
             <iframe
               width="100%"
               height="100%"
-              src="https://www.youtube.com/embed/bMknfKXIFA8"
+              src="https://www.youtube.com/embed/FxgM9k1rg0Q?si=ZqfmeuqMWiJOi6XY"
+              title="React Tutorial for Beginners"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="rounded-sm"
+            ></iframe>
+          </div>
+        </div>
+        <div className="mb-12">
+          <h2 className="text-2xl font-semibold text-[#000000] mb-4">
+            Part 2
+          </h2>
+          <div className="aspect-video w-full">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/IdlF1zsUN3M?si=ERjZxm_1ON9ow36F"
               title="React Tutorial for Beginners"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

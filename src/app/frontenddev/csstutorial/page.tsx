@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import { Copy, Check } from "lucide-react";
+import { Copy, Check, ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 const CSSTutorial = () => {
   const tutorials = [
@@ -74,7 +75,16 @@ div > p {
   };
 
   return (
-    <div className="min-h-screen mt-12 bg-white pt-16 pb-12">
+    <div className="min-h-screen mt-12 bg-white pt-16 pb-12 relative">
+      <div className="absolute top-8 left-4 md:left-8">
+        <Link
+          href="/frontenddev" 
+          className="inline-flex items-center px-4 py-2 text-[#A435F0] hover:text-white border-2 border-[#A435F0] hover:bg-[#A435F0] rounded-sm transition-all duration-300 group"
+        >
+          <ArrowLeft className="w-4 h-4 mr-2 transform group-hover:translate-x-[-2px] transition-transform" />
+          Back to Modules
+        </Link>
+      </div>
       <div className="max-w-4xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-[#000000] mb-6">
           CSS Tutorial
@@ -93,7 +103,7 @@ div > p {
             <iframe
               width="100%"
               height="100%"
-              src="https://www.youtube.com/embed/OXGznpKZ_sA"
+              src="https://www.youtube.com/embed/K1naz9wBwKU?si=X0_X5Z_YTJnVDE5J"
               title="CSS Tutorial for Beginners"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

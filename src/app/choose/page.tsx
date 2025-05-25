@@ -1,43 +1,66 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { ArrowRight, Code, Database } from "lucide-react";
 
 export default function ChoosePath() {
   return (
-    <div className="flex min-h-screen w-full flex-col items-center justify-center gap-8 p-4">
-      <h1 className="text-center text-3xl font-bold md:text-5xl">
-        Choose Your Learning Path
-      </h1>
-      <p className="max-w-2xl text-center text-gray-500 dark:text-gray-400">
-        Select the development path you want to pursue. Each path contains carefully curated resources and a structured learning approach.
-      </p>
-      <div className="mt-8 grid w-full max-w-4xl grid-cols-1 gap-6 md:grid-cols-2">
-        <Link
-          href="/frontenddev"
-          className="group relative overflow-hidden rounded-lg border p-8 transition-colors hover:border-blue-500"
-        >
-          <div className="relative z-10">
-            <h2 className="mb-4 text-2xl font-semibold">Frontend Development</h2>
-            <p className="mb-6 text-gray-500 dark:text-gray-400">
-              Master HTML, CSS, JavaScript, and modern frameworks like React and Next.js. Build beautiful, responsive user interfaces.
-            </p>
-            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:opacity-90">
-              Start Frontend Path
-            </Button>
-          </div>
-          <div className="absolute inset-0 z-0 bg-gradient-to-br from-blue-50 to-purple-50 opacity-0 transition-opacity group-hover:opacity-10 dark:from-blue-900 dark:to-purple-900" />
-        </Link>
+    <div className="min-h-screen mt-12 w-full bg-white">
+      <div className="flex flex-col items-center justify-center gap-8 p-8 md:p-16">
+        <div className="text-center max-w-3xl">
+          <h1 className="text-4xl md:text-6xl font-bold text-[#000000] mb-6 tracking-tight">
+            Choose Your Learning Path
+          </h1>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Select the development path you want to pursue. Each path contains carefully curated resources and a structured learning approach.
+          </p>
+        </div>
 
-        <div className="relative overflow-hidden rounded-lg border p-8 opacity-60">
-          <div className="relative z-10">
-            <h2 className="mb-4 text-2xl font-semibold">Backend Development</h2>
-            <p className="mb-6 text-gray-500 dark:text-gray-400">
-              Coming soon! Learn server-side programming, databases, APIs, and backend frameworks.
-            </p>
-            <Button disabled className="bg-gray-500 text-white">
-              Coming Soon
-            </Button>
+        <div className="mt-12 grid w-full max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">
+          <Link
+            href="/frontenddev"
+            className="group relative overflow-hidden rounded-xl border border-gray-100 p-8 transition-all duration-300 hover:border-[#A435F0] hover:shadow-[0_0_30px_rgba(164,53,240,0.2)]"
+          >
+            <div className="relative z-10">
+              <div className="mb-6 inline-block rounded-lg bg-[#A435F0]/10 p-3">
+                <Code className="h-6 w-6 text-[#A435F0]" />
+              </div>
+              <h2 className="mb-4 text-2xl font-semibold text-[#000000] group-hover:text-[#A435F0] transition-colors">
+                Frontend Development
+              </h2>
+              <p className="mb-8 text-gray-600">
+                Master HTML, CSS, JavaScript, and modern frameworks like React and Next.js. Build beautiful, responsive user interfaces.
+              </p>
+              <div className="flex items-center text-[#A435F0]">
+                <span className="font-medium">Start Learning</span>
+                <ArrowRight className="ml-2 h-4 w-4 transform transition-transform group-hover:translate-x-1" />
+              </div>
+            </div>
+            <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#A435F0]/5 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+          </Link>
+
+          <div className="relative overflow-hidden rounded-xl border border-gray-100 p-8 opacity-80">
+            <div className="relative z-10">
+              <div className="mb-6 inline-block rounded-lg bg-gray-100 p-3">
+                <Database className="h-6 w-6 text-gray-400" />
+              </div>
+              <h2 className="mb-4 text-2xl font-semibold text-[#000000]">
+                Backend Development
+              </h2>
+              <p className="mb-8 text-gray-600">
+                Coming soon! Learn server-side programming, databases, APIs, and backend frameworks.
+              </p>
+              <div className="flex items-center text-gray-400">
+                <span className="font-medium">Coming Soon</span>
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </div>
+            </div>
+            <div className="absolute inset-0 z-0 bg-gray-50" />
           </div>
-          <div className="absolute inset-0 z-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800" />
+        </div>
+
+        <div className="mt-12 text-center">
+          <p className="text-gray-500">
+            More learning paths will be added soon!
+          </p>
         </div>
       </div>
     </div>
