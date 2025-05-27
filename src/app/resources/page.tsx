@@ -33,7 +33,7 @@ const resources = [
   {
     title: 'Design Resources',
     description: 'UI/UX design tools and inspiration for developers.',
-    link: 'https://dribbble.com/',
+    link: 'https://mobbin.com/discover/apps/web/latest',
     icon: '🎨'
   }
 ];
