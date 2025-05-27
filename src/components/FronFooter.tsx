@@ -11,17 +11,17 @@ const FronFooter = () => {
         <div className="space-y-4">
           <div className="flex items-center space-x-2">
             <span className="w-8 h-8 flex items-center justify-center bg-[#A435F0] bg-opacity-10 text-[#A435F0] rounded-sm">1</span>
-            <p className="text-gray-600">Learn HTML</p>
+            <p className="text-gray-800 font-semibold text-lg">Learn HTML</p>
           </div>
           
           <div className="flex items-center space-x-2">
             <span className="w-8 h-8 flex items-center justify-center bg-[#A435F0] bg-opacity-10 text-[#A435F0] rounded-sm">2</span>
-            <p className="text-gray-600">Learn CSS</p>
+            <p className="text-gray-800 font-semibold text-lg">Learn CSS</p>
           </div>
           
           <div className="flex items-center space-x-2">
             <span className="w-8 h-8 flex items-center justify-center bg-[#A435F0] bg-opacity-10 text-[#A435F0] rounded-sm">3</span>
-            <p className="text-gray-600">After HTML & CSS, make a clone of any website like Amazon or Netflix</p>
+            <p className="text-gray-800 font-semibold text-lg">After HTML & CSS, make a clone of any website like Amazon or Netflix</p>
           </div>
         </div>
 
@@ -45,17 +45,17 @@ const FronFooter = () => {
         <div className="space-y-4">
           <div className="flex items-center space-x-2">
             <span className="w-8 h-8 flex items-center justify-center bg-[#A435F0] bg-opacity-10 text-[#A435F0] rounded-sm">4</span>
-            <p className="text-gray-600">Learn Javascript</p>
+            <p className="text-gray-800 font-semibold text-lg">Learn Javascript</p>
           </div>
           
           <div className="flex items-center space-x-2">
             <span className="w-8 h-8 flex items-center justify-center bg-[#A435F0] bg-opacity-10 text-[#A435F0] rounded-sm">5</span>
-            <p className="text-gray-600">After Learning HTML, CSS & JavaScript</p>
+            <p className="text-gray-800 font-semibold text-lg">After Learning HTML, CSS & JavaScript</p>
           </div>
           
           <div className="flex items-center space-x-2">
             <span className="w-8 h-8 flex items-center justify-center bg-[#A435F0] bg-opacity-10 text-[#A435F0] rounded-sm">6</span>
-            <p className="text-gray-600">Make a Project with Above Tech, Below is the tutorial</p>
+            <p className="text-gray-800 font-semibold text-lg">Make a Project with Above Tech, Below is the tutorial</p>
           </div>
         </div>
 
@@ -79,29 +79,29 @@ const FronFooter = () => {
         <div className="space-y-4">
           <div className="flex items-center space-x-2">
             <span className="w-8 h-8 flex items-center justify-center bg-[#A435F0] bg-opacity-10 text-[#A435F0] rounded-sm">7</span>
-            <p className="text-gray-600">Learn React</p>
+            <p className="text-gray-800 font-semibold text-lg">Learn React</p>
           </div>
           
           <div className="flex items-center space-x-2">
             <span className="w-8 h-8 flex items-center justify-center bg-[#A435F0] bg-opacity-10 text-[#A435F0] rounded-sm">8</span>
-            <p className="text-gray-600">Make a Project with React like Food Delivery App, etc.</p>
+            <p className="text-gray-800 font-semibold text-lg">Make a Project with React like Food Delivery App, etc.</p>
           </div>
           
           <div className="flex items-center space-x-2">
             <span className="w-8 h-8 flex items-center justify-center bg-[#A435F0] bg-opacity-10 text-[#A435F0] rounded-sm">9</span>
-            <p className="text-gray-600">Learn Next.js</p>
+            <p className="text-gray-800 font-semibold text-lg">Learn Next.js</p>
           </div>
           
           <div className="flex items-center space-x-2">
             <span className="w-8 h-8 flex items-center justify-center bg-[#A435F0] bg-opacity-10 text-[#A435F0] rounded-sm">10</span>
-            <p className="text-gray-600">Make a Project with Next.js like Blog Website, etc.</p>
+            <p className="text-gray-800 font-semibold text-lg">Make a Project with Next.js like Blog Website, etc.</p>
           </div>
         </div>
 
         <div className="mt-8 p-6 bg-gray-50 rounded-sm">
           <div className="flex items-center space-x-2">
             <span className="w-8 h-8 flex items-center justify-center bg-[#A435F0] bg-opacity-10 text-[#A435F0] rounded-sm">11</span>
-            <p className="text-gray-600">You can explore these websites for inspiration:</p>
+            <p className="text-gray-800 font-semibold text-lg">You can explore these websites for inspiration:</p>
           </div>
           <div className="mt-4 flex flex-wrap gap-4">
             <Link 
