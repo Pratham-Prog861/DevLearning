@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, Code, Layout, Palette, Terminal } from 'lucide-react';
+import FronFooter from '@/components/FronFooter';
 
 const learningPaths = [
   {
@@ -91,16 +92,8 @@ const FrontendDev = () => {
           })}
         </div>
 
-        <div className="mt-12 p-6 bg-gray-50 rounded-sm border border-gray-200 text-center">
-          <h2 className="text-2xl font-semibold text-[#000000] mb-4">
-            Not sure where to start?
-          </h2>
-          <p className="text-gray-600 mb-6">
-            Take our skill assessment test to find the perfect starting point for your journey.
-          </p>
-          <button className="px-6 py-3 bg-[#A435F0] text-white hover:bg-[#8710E0] transition-colors duration-300 rounded-sm">
-            Take Skill Assessment
-          </button>
+        <div>
+          <FronFooter />
         </div>
       </div>
     </div>

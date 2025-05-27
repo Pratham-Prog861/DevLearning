@@ -184,18 +184,6 @@ function Counter() {
             </div>
           ))}
         </div>
-
-        <div className="mt-12 p-6 bg-gray-50 rounded-sm border border-gray-200">
-          <h2 className="text-2xl font-semibold text-[#000000] mb-4">
-            Ready to Practice?
-          </h2>
-          <p className="text-gray-600 mb-6">
-            Put your React.js knowledge to the test with our interactive coding exercises.
-          </p>
-          <button className="px-6 py-3 bg-[#A435F0] text-white hover:bg-[#8710E0] transition-colors duration-300 rounded-sm">
-            Start Practicing
-          </button>
-        </div>
       </div>
     </div>
   );
