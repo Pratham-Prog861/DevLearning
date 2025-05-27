@@ -18,7 +18,7 @@ export function Spotlight({
     const handleMouseMove = (e: MouseEvent) => {
       if (!divRef.current) return;
       const { clientX, clientY } = e;
-      const { left, top, width, height } = divRef.current.getBoundingClientRect();
+      const { left, top, } = divRef.current.getBoundingClientRect();
       const x = clientX - left;
       const y = clientY - top;
       divRef.current.style.setProperty("--mouse-x", `${x}px`);

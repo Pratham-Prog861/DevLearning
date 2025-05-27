@@ -61,6 +61,8 @@ function FeatureCard({ title, description, index }: FeatureCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const card = cardRef.current;
+    
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -72,13 +74,13 @@ function FeatureCard({ title, description, index }: FeatureCardProps) {
       { threshold: 0.1 }
     );
 
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
+    if (card) {
+      observer.observe(card);
     }
 
     return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
+      if (card) {
+        observer.unobserve(card);
       }
     };
   }, []);
@@ -95,7 +97,7 @@ function FeatureCard({ title, description, index }: FeatureCardProps) {
         'hover:border-[#A435F0]'
       )}
       style={{
-        transitionDelay: `${index * 1}ms`
+        transitionDelay: `${index * 10}ms`
       }}
     >
       <h3 className="text-2xl font-semibold mb-4 text-[#000000]">{title}</h3>

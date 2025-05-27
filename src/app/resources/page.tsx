@@ -78,6 +78,7 @@ function ResourceCard({ title, description, link, index, icon }: ResourceCardPro
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const card = cardRef.current; // Store ref value in a variable
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -89,13 +90,13 @@ function ResourceCard({ title, description, link, index, icon }: ResourceCardPro
       { threshold: 0.1 }
     );
 
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
+    if (card) {
+      observer.observe(card);
     }
 
     return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
+      if (card) { // Use the stored variable instead of cardRef.current
+        observer.unobserve(card);
       }
     };
   }, []);
@@ -118,7 +119,7 @@ function ResourceCard({ title, description, link, index, icon }: ResourceCardPro
           'relative overflow-hidden'
         )}
         style={{
-          transitionDelay: `${index * 1}ms`
+          transitionDelay: `${index * 10}ms`
         }}
       >
         <div className="relative z-10 flex items-start gap-4">
