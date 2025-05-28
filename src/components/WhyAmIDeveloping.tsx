@@ -110,7 +110,7 @@ const WhyAmIDeveloping = () => {
           className="text-center mt-16"
         >
           <p className="text-gray-600 text-lg italic">
-            "The only way to do great work is to love what you do." - Steve Jobs
+            The only way to do great work is to love what you do. - Steve Jobs
           </p>
         </motion.div>
       </div>
