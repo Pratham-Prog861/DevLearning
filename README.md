@@ -105,7 +105,8 @@ Open [http://localhost:3000](http://localhost:3000) to see the app.
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome!<br>
+Contributions, issues, and feature requests are welcome!
+
 Feel free to check the [issues page](https://github.com/your-username/codewithpratham/issues) or submit a pull request.
 
 ---
