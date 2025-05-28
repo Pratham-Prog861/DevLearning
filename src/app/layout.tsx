@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "<CodeWithPratham/>",
+  title: "Code With Pratham",
   description: "<CodeWithPratham/> is a place for developers to learn.",
 };
 

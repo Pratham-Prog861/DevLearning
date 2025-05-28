@@ -27,7 +27,7 @@ const FronFooter = () => {
 
         <div className="mt-8 mb-12">
           <h2 className="text-2xl font-semibold text-[#000000] mb-4">
-            Video Tutorial
+            Amozon Clone Tutorial
           </h2>
           <div className="aspect-video w-full">
             <iframe
@@ -61,7 +61,7 @@ const FronFooter = () => {
 
         <div className="mt-8 mb-12">
           <h2 className="text-2xl font-semibold text-[#000000] mb-4">
-            Full Tutorial Playlist
+            HTML, CSS & JS Full Tutorial Playlist
           </h2>
           <div className="aspect-video w-full">
             <iframe
