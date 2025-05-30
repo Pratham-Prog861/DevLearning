@@ -83,6 +83,28 @@ export default function ChoosePath() {
             </div>
             <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#A435F0]/5 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
           </Link>
+
+          <Link
+            href="/githubtutorial"
+            className="group relative overflow-hidden rounded-xl border border-gray-100 p-8 transition-all duration-300 hover:border-[#A435F0] hover:shadow-[0_0_30px_rgba(164,53,240,0.2)]"
+          >
+            <div className="relative z-10">
+              <div className="mb-6 inline-block rounded-lg bg-[#A435F0]/10 p-3">
+                <ChartPie className="h-6 w-6 text-[#A435F0]" />
+              </div>
+              <h2 className="mb-4 text-2xl font-semibold text-[#000000] group-hover:text-[#A435F0] transition-colors">
+                Git and Github
+              </h2>
+              <p className="mb-8 text-gray-600">
+                Learn how to use Git and Github to manage your code and collaborate with others.
+              </p>
+              <div className="flex items-center text-[#A435F0]">
+                <span className="font-medium">Start Learning</span>
+                <ArrowRight className="ml-2 h-4 w-4 transform transition-transform group-hover:translate-x-1" />
+              </div>
+            </div>
+            <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#A435F0]/5 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+          </Link>
         </div>
 
         <div className="mt-12 text-center">

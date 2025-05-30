@@ -14,7 +14,7 @@ const BackFooter = () => {
               width="100%"
               height="100%"
               src="https://www.youtube.com/embed/zLJoVRleOuc?si=0K7hBatuyT-O4ywT"
-              title="HTML Tutorial for Beginners"
+              title="Full Stack with NextJs"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               className="rounded-sm"
