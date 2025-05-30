@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ChartPie, Code, Database } from "lucide-react";
+import { ArrowRight, ChartPie, Code, Database, GitMerge } from "lucide-react";
 
 export default function ChoosePath() {
   return (
@@ -90,7 +90,7 @@ export default function ChoosePath() {
           >
             <div className="relative z-10">
               <div className="mb-6 inline-block rounded-lg bg-[#A435F0]/10 p-3">
-                <ChartPie className="h-6 w-6 text-[#A435F0]" />
+                <GitMerge className="h-6 w-6 text-[#A435F0]" />
               </div>
               <h2 className="mb-4 text-2xl font-semibold text-[#000000] group-hover:text-[#A435F0] transition-colors">
                 Git and Github
