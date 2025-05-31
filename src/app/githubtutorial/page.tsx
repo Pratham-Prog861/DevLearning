@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import { Copy, Check } from "lucide-react";
+import { Copy, Check, ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 const gitTutorials = [
   {
@@ -77,6 +78,15 @@ const GithubTutorial = () => {
 
   return (
     <div className="min-h-screen mt-12 bg-white pt-16 pb-12 relative">
+      <div className="absolute top-15 left-4 md:left-8">
+        <Link 
+          href="/choose" 
+          className="inline-flex items-center px-4 py-2 text-[#A435F0] hover:text-white border-2 border-[#A435F0] hover:bg-[#A435F0] rounded-sm transition-all duration-300 group"
+        >
+          <ArrowLeft className="w-4 h-4 mr-2 transform group-hover:translate-x-[-2px] transition-transform" />
+          Back to Learning Paths
+        </Link>
+      </div>
       <div className="max-w-4xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-[#000000] mb-6 text-center">
           Git & GitHub Tutorial

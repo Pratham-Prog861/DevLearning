@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, Braces, Code, Database, Layout } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Braces, Code, Database, Layout } from 'lucide-react';
 import BackFooter from '@/components/BackFooter';
 
 
@@ -41,6 +41,15 @@ const learningPaths = [
 const FrontendDev = () => {
   return (
     <div className="min-h-screen mt-12 bg-white pt-16 pb-12">
+      <div className="absolute top-15 left-4 md:left-8">
+        <Link 
+          href="/choose" 
+          className="inline-flex items-center px-4 py-2 text-[#A435F0] hover:text-white border-2 border-[#A435F0] hover:bg-[#A435F0] rounded-sm transition-all duration-300 group"
+        >
+          <ArrowLeft className="w-4 h-4 mr-2 transform group-hover:translate-x-[-2px] transition-transform" />
+          Back to Learning Paths
+        </Link>
+      </div>
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-[#000000] mb-4">
