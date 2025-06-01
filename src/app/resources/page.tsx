@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { Spotlight } from '@/components/ui/spotlight';
 import { ExternalLink } from 'lucide-react';
+import ResourcesFooter from '@/components/ResourcesFooter';
 
 const resources = [
   {
@@ -62,6 +63,7 @@ export default function ResourcesPage() {
           ))}
         </div>
       </div>
+      <ResourcesFooter />
     </div>
   );
 }

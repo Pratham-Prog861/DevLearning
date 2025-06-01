@@ -75,8 +75,8 @@ div > p {
   };
 
   return (
-    <div className="min-h-screen mt-12 bg-white pt-16 pb-12 relative">
-      <div className="absolute top-8 left-4 md:left-8">
+    <div className="min-h-screen mt-16 bg-white pt-16 pb-12 relative">
+      <div className="absolute top-5 left-4 md:left-8">
         <Link
           href="/frontenddev" 
           className="inline-flex items-center px-4 py-2 text-[#A435F0] hover:text-white border-2 border-[#A435F0] hover:bg-[#A435F0] rounded-sm transition-all duration-300 group"

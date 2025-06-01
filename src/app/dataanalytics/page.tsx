@@ -41,8 +41,8 @@ const learningPaths = [
 const page = () => {
   return (
     
-    <div className="min-h-screen mt-12 bg-white pt-16 pb-12">
-      <div className="absolute top-15 left-4 md:left-8">
+    <div className="min-h-screen mt-16 bg-white pt-16 pb-12">
+      <div className="absolute top-20 left-4 md:left-8">
         <Link 
           href="/choose" 
           className="inline-flex items-center px-4 py-2 text-[#A435F0] hover:text-white border-2 border-[#A435F0] hover:bg-[#A435F0] rounded-sm transition-all duration-300 group"
