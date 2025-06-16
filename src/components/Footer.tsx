@@ -35,11 +35,6 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold text-[#000000] mb-4">Connect</h3>
             <ul className="space-y-2">
-              <li>
-                <Link href="https://www.linkedin.com/in/pratham-darji-b704092a2/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#A435F0] transition-colors duration-200 focus:outline-none focus:text-[#A435F0]">
-                  LinkedIn Profile
-                </Link>
-              </li>
               <li className="flex items-center space-x-4 mt-3 justify-center md:justify-start">
                 <Link
                   href="https://github.com/Pratham-Prog861"
@@ -49,7 +44,6 @@ const Footer = () => {
                   aria-label="GitHub Profile"
                 >
                   <Github className="w-6 h-6" aria-hidden="true" />
-                  <span className="sr-only absolute w-px h-px p-0 m-[-1px] overflow-hidden clip-rect whitespace-nowrap border-0">GitHub</span>
                 </Link>
                 <Link
                   href="https://www.linkedin.com/in/pratham-darji-b704092a2/"
@@ -59,7 +53,6 @@ const Footer = () => {
                   aria-label="LinkedIn Profile"
                 >
                   <Linkedin className="w-6 h-6" aria-hidden="true" />
-                  <span className="sr-only absolute w-px h-px p-0 m-[-1px] overflow-hidden clip-rect whitespace-nowrap border-0">LinkedIn</span>
                 </Link>
               </li>
             </ul>
