@@ -23,8 +23,10 @@ export default function SmoothScroll({
   useEffect(() => {
     const lenis = new Lenis();
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     lenis.on('scroll', (e: ScrollEvent) => {
-      console.log(e);
+      // console.log(e);
+      // You can handle scroll events here if needed
     });
 
     function raf(time: number) {
