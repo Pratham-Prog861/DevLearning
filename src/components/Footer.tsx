@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 text-center">
         <div className="mb-8">
           <h2 className="text-3xl font-extrabold text-[#000000] mb-2 tracking-tight">
-            <span className="text-[#A435F0]">Code</span>WithPratham
+            <span className="text-[#A435F0]">Dev</span>Journey
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-base">
             Empowering developers with structured learning paths and comprehensive resources.
@@ -60,7 +60,7 @@ const Footer = () => {
         </nav>
 
         <div className="border-t border-gray-200 pt-8 mt-8">
-          <p className="text-sm text-gray-600">&copy; {new Date().getFullYear()} Developed by Pratham Darji. All rights reserved.</p>
+          <p className="text-sm text-gray-600">&copy; {new Date().getFullYear()} Developed with ❤️. All rights reserved.</p>
         </div>
       </div>
     </footer>
