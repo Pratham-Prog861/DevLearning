@@ -113,7 +113,7 @@ Feel free to check the [issues page](https://github.com/your-username/codewithpr
 
 ## 📄 License
 
-This project is [ISC](LICENSE) licensed.
+This project is [MIT](LICENSE) licensed.
 
 ---
 
