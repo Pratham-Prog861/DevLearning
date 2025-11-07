@@ -1,9 +1,83 @@
 "use client";
 import React, { useState } from "react";
-import { Copy, Check, ArrowLeft } from "lucide-react";
+import { Copy, Check, ArrowLeft, X, Play } from "lucide-react";
 import Link from "next/link";
 
 const ReactJSTutorial = () => {
+  const [isCompilerOpen, setIsCompilerOpen] = useState(false);
+  const [currentCode, setCurrentCode] = useState("");
+  const [consoleOutput, setConsoleOutput] = useState<string[]>([]);
+
+  const openCompiler = (code: string) => {
+    setCurrentCode(code);
+    setConsoleOutput([]);
+    setIsCompilerOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeCompiler = () => {
+    setIsCompilerOpen(false);
+    document.body.style.overflow = 'unset';
+  };
+
+  const runCode = () => {
+    const output: string[] = ['📝 Code Explanation:', ''];
+
+    // Analyze the code and provide explanation
+    if (currentCode.includes('function Welcome') && !currentCode.includes('useState')) {
+      output.push('⚛️ Basic React Component:');
+      output.push('• Creates a simple functional component');
+      output.push('• Returns JSX (HTML-like syntax in JavaScript)');
+      output.push('• Can be reused anywhere with <Welcome />');
+      output.push('• Renders "Hello, React!" heading');
+      output.push('');
+      output.push('📌 Key Concepts:');
+      output.push('• Function component - Modern React pattern');
+      output.push('• JSX - JavaScript XML syntax');
+      output.push('• return - What the component renders');
+      output.push('• Self-closing tags - <Welcome /> to use component');
+    } else if (currentCode.includes('useState') && currentCode.includes('useEffect')) {
+      output.push('🪝 React Hooks (useState & useEffect):');
+      output.push('• useState - Manages component state (data that changes)');
+      output.push('• count starts at 0, setCount updates it');
+      output.push('• useEffect - Runs side effects (like updating page title)');
+      output.push('• [count] dependency - Effect runs when count changes');
+      output.push('• Button click increments counter');
+      output.push('');
+      output.push('📌 Key Concepts:');
+      output.push('• useState(0) - Initial state value is 0');
+      output.push('• setCount - Function to update state');
+      output.push('• useEffect - Lifecycle hook for side effects');
+      output.push('• onClick handler - Responds to button clicks');
+      output.push('• Re-renders automatically when state changes');
+    } else if (currentCode.includes('{ name, role, avatar }') || currentCode.includes('UserCard')) {
+      output.push('📦 Component Props:');
+      output.push('• Props pass data from parent to child components');
+      output.push('• Destructuring { name, role, avatar } extracts props');
+      output.push('• Makes components reusable with different data');
+      output.push('• Example: <UserCard name="John" role="Developer" />');
+      output.push('');
+      output.push('📌 Key Concepts:');
+      output.push('• Props - Component inputs (like function parameters)');
+      output.push('• Destructuring - Clean way to extract prop values');
+      output.push('• Reusability - Same component, different data');
+      output.push('• Dynamic content - {name}, {role} display prop values');
+      output.push('• Parent controls child data');
+    } else {
+      output.push('This is a React component example.');
+    }
+
+    output.push('');
+    output.push('💡 To Run This Code:');
+    output.push('• Create React app: npx create-react-app my-app');
+    output.push('• Or use Vite: npm create vite@latest');
+    output.push('• Add code to a .jsx or .tsx file');
+    output.push('• Run: npm start or npm run dev');
+    output.push('• Or try online at codesandbox.io or stackblitz.com');
+
+    setConsoleOutput(output);
+  };
+
   const tutorials = [
     {
       title: "Introduction to React",
@@ -178,13 +252,77 @@ function Counter() {
                 ))}
               </div>
 
-              <button className="mt-6 px-4 py-2 border-2 border-[#A435F0] text-[#A435F0] hover:bg-[#A435F0] hover:text-white transition-colors duration-300 rounded-sm">
+              <button 
+                onClick={() => openCompiler(tutorial.examples[0].code)}
+                className="mt-6 px-4 py-2 border-2 border-[#A435F0] text-[#A435F0] hover:bg-[#A435F0] hover:text-white transition-colors duration-300 rounded-sm"
+              >
                 Try it Yourself
               </button>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Compiler Modal */}
+      {isCompilerOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-hidden"
+          onWheel={(e) => e.stopPropagation()}
+          onClick={(e) => e.target === e.currentTarget && closeCompiler()}
+        >
+          <div className="bg-white rounded-sm w-full max-w-6xl h-[80vh] flex flex-col shadow-2xl">
+            <div className="flex items-center justify-between p-4 border-b border-gray-200">
+              <h3 className="text-xl font-semibold text-[#000000]">React.js Compiler</h3>
+              <button
+                onClick={() => setIsCompilerOpen(false)}
+                className="p-2 hover:bg-gray-100 rounded-sm transition-colors"
+              >
+                <X className="text-black" size={20} />
+              </button>
+            </div>
+
+            <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
+              <div className="flex-1 flex flex-col border-r border-gray-200">
+                <div className="flex items-center justify-between p-3 bg-gray-50 border-b border-gray-200">
+                  <span className="text-sm font-medium text-gray-700">React Code</span>
+                  <button
+                    onClick={runCode}
+                    className="flex items-center gap-2 px-3 py-1.5 bg-[#A435F0] text-white rounded-sm hover:bg-[#8c2ad1] transition-colors text-sm"
+                  >
+                    <Play size={14} />
+                    Run
+                  </button>
+                </div>
+                <textarea
+                  value={currentCode}
+                  onChange={(e) => setCurrentCode(e.target.value)}
+                  className="flex-1 p-4 font-mono text-sm resize-none focus:outline-none bg-gray-50 text-black"
+                  spellCheck={false}
+                />
+              </div>
+
+              <div className="flex-1 flex flex-col">
+                <div className="p-3 bg-gray-50 border-b border-gray-200">
+                  <span className="text-sm font-medium text-gray-700">Console Output</span>
+                </div>
+                <div className="flex-1 overflow-auto bg-gray-900 p-4">
+                  {consoleOutput.length > 0 ? (
+                    consoleOutput.map((line, idx) => (
+                      <div key={idx} className="text-green-400 font-mono text-sm mb-1">
+                        {line}
+                      </div>
+                    ))
+                  ) : (
+                    <div className="text-gray-500 font-mono text-sm">
+                      Click Run to see output...
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

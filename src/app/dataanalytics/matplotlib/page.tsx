@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Copy, Check, ArrowLeft } from "lucide-react";
+import { Copy, Check, ArrowLeft, X, Play } from "lucide-react";
 import Link from "next/link";
 
 const matplotlibTutorials = [
@@ -41,6 +41,112 @@ const matplotlibTutorials = [
 
 export default function MatplotlibTutorial() {
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
+  const [isCompilerOpen, setIsCompilerOpen] = useState(false);
+  const [currentCode, setCurrentCode] = useState("");
+  const [consoleOutput, setConsoleOutput] = useState<string[]>([]);
+  const [chartImage, setChartImage] = useState<string | null>(null);
+
+  const openCompiler = (code: string) => {
+    setCurrentCode(code);
+    setConsoleOutput([]);
+    setChartImage(null);
+    setIsCompilerOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeCompiler = () => {
+    setIsCompilerOpen(false);
+    document.body.style.overflow = 'unset';
+  };
+
+  const runCode = async () => {
+    setConsoleOutput(['⏳ Loading Python environment with Matplotlib...']);
+    
+    try {
+      // Load Pyodide if not already loaded
+      interface PyodideInterface {
+        runPython: (code: string) => string;
+        runPythonAsync: (code: string) => Promise<void>;
+        loadPackage: (packages: string | string[]) => Promise<void>;
+      }
+      
+      const win = window as Window & { 
+        pyodide?: PyodideInterface; 
+        loadPyodide?: () => Promise<PyodideInterface> 
+      };
+      
+      if (!win.pyodide) {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js';
+        document.head.appendChild(script);
+        
+        await new Promise((resolve, reject) => {
+          script.onload = resolve;
+          script.onerror = reject;
+        });
+        
+        win.pyodide = await win.loadPyodide?.();
+      }
+
+      const pyodide = win.pyodide;
+      if (!pyodide) {
+        setConsoleOutput(['Error: Failed to load Python environment']);
+        return;
+      }
+
+      // Load Matplotlib and NumPy packages
+      await pyodide.loadPackage(['matplotlib', 'numpy']);
+
+      const output: string[] = [];
+      
+      // Setup matplotlib for web
+      pyodide.runPython(`
+import sys
+from io import StringIO, BytesIO
+import base64
+sys.stdout = StringIO()
+
+import matplotlib
+matplotlib.use('AGG')
+import matplotlib.pyplot as plt
+      `);
+
+      // Run user code
+      await pyodide.runPythonAsync(currentCode);
+      
+      // Get console output
+      const result = pyodide.runPython('sys.stdout.getvalue()');
+      if (result) {
+        output.push(...result.split('\n').filter(line => line.trim()));
+      }
+
+      // Try to capture the plot
+      try {
+        const imageData = pyodide.runPython(`
+buf = BytesIO()
+plt.savefig(buf, format='png', dpi=100, bbox_inches='tight')
+buf.seek(0)
+img_str = base64.b64encode(buf.read()).decode('utf-8')
+plt.close('all')
+img_str
+        `);
+        
+        if (imageData) {
+          setChartImage(`data:image/png;base64,${imageData}`);
+          output.push('✅ Code executed successfully');
+          output.push('📊 Chart displayed below');
+        }
+      } catch {
+        output.push('✅ Code executed successfully');
+        output.push('ℹ️ No plot to display');
+      }
+      
+      setConsoleOutput(output);
+    } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : String(error);
+      setConsoleOutput([`Error: ${errorMessage}`]);
+    }
+  };
 
   const copyToClipboard = (text: string, idx: number) => {
     navigator.clipboard.writeText(text);
@@ -122,13 +228,91 @@ export default function MatplotlibTutorial() {
                 ))}
               </div>
 
-              <button className="mt-6 px-4 py-2 border-2 border-[#A435F0] text-[#A435F0] hover:bg-[#A435F0] hover:text-white transition-colors duration-300 rounded-sm">
+              <button 
+                onClick={() => openCompiler(tutorial.examples[0].code)}
+                className="mt-6 px-4 py-2 border-2 border-[#A435F0] text-[#A435F0] hover:bg-[#A435F0] hover:text-white transition-colors duration-300 rounded-sm"
+              >
                 Try it Yourself
               </button>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Compiler Modal */}
+      {isCompilerOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-hidden"
+          onWheel={(e) => e.stopPropagation()}
+          onClick={(e) => e.target === e.currentTarget && closeCompiler()}
+        >
+          <div className="bg-white rounded-sm w-full max-w-6xl h-[80vh] flex flex-col shadow-2xl">
+            <div className="flex items-center justify-between p-4 border-b border-gray-200">
+              <h3 className="text-xl font-semibold text-[#000000]">Matplotlib Compiler</h3>
+              <button
+                onClick={() => setIsCompilerOpen(false)}
+                className="p-2 hover:bg-gray-100 rounded-sm transition-colors"
+              >
+                <X className="text-black" size={20} />
+              </button>
+            </div>
+
+            <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
+              <div className="flex-1 flex flex-col border-r border-gray-200">
+                <div className="flex items-center justify-between p-3 bg-gray-50 border-b border-gray-200">
+                  <span className="text-sm font-medium text-gray-700">Matplotlib Code</span>
+                  <button
+                    onClick={runCode}
+                    className="flex items-center gap-2 px-3 py-1.5 bg-[#A435F0] text-white rounded-sm hover:bg-[#8c2ad1] transition-colors text-sm"
+                  >
+                    <Play size={14} />
+                    Run
+                  </button>
+                </div>
+                <textarea
+                  value={currentCode}
+                  onChange={(e) => setCurrentCode(e.target.value)}
+                  className="flex-1 p-4 font-mono text-sm resize-none focus:outline-none bg-gray-50 text-black"
+                  spellCheck={false}
+                />
+              </div>
+
+              <div className="flex-1 flex flex-col">
+                <div className="p-3 bg-gray-50 border-b border-gray-200">
+                  <span className="text-sm font-medium text-gray-700">Output</span>
+                </div>
+                <div className="flex-1 overflow-auto bg-gray-900 p-4">
+                  {consoleOutput.length > 0 ? (
+                    <>
+                      {consoleOutput.map((line, idx) => (
+                        <div key={idx} className="text-green-400 font-mono text-sm mb-1">
+                          {line}
+                        </div>
+                      ))}
+                      {chartImage && (
+                        <div className="mt-4 bg-white p-4 rounded">
+                          <h4 className="text-sm font-semibold text-gray-800 mb-2">
+                            📊 Matplotlib Visualization
+                          </h4>
+                          <img 
+                            src={chartImage} 
+                            alt="Matplotlib Chart" 
+                            className="max-w-full h-auto border border-gray-300 rounded"
+                          />
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <div className="text-gray-500 font-mono text-sm">
+                      Click Run to see output...
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

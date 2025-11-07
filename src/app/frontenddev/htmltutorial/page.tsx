@@ -1,9 +1,29 @@
 "use client";
 import React, { useState } from "react";
-import { Copy, Check, ArrowLeft } from "lucide-react";
+import { Copy, Check, ArrowLeft, X, Play } from "lucide-react";
 import Link from "next/link";
 
 const HTMLTutorial = () => {
+  const [isCompilerOpen, setIsCompilerOpen] = useState(false);
+  const [currentCode, setCurrentCode] = useState("");
+  const [compiledOutput, setCompiledOutput] = useState("");
+
+  const openCompiler = (code: string) => {
+    setCurrentCode(code);
+    setCompiledOutput(code);
+    setIsCompilerOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeCompiler = () => {
+    setIsCompilerOpen(false);
+    document.body.style.overflow = 'unset';
+  };
+
+  const runCode = () => {
+    setCompiledOutput(currentCode);
+  };
+
   const tutorials = [
     {
       title: "Introduction to HTML",
@@ -169,13 +189,93 @@ const HTMLTutorial = () => {
                 ))}
               </div>
 
-              <button className="mt-6 px-4 py-2 border-2 border-[#A435F0] text-[#A435F0] hover:bg-[#A435F0] hover:text-white transition-colors duration-300 rounded-sm">
+              <button 
+                onClick={() => openCompiler(tutorial.examples[0].code)}
+                className="mt-6 px-4 py-2 border-2 border-[#A435F0] text-[#A435F0] hover:bg-[#A435F0] hover:text-white transition-colors duration-300 rounded-sm"
+              >
                 Try it Yourself
               </button>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Compiler Modal */}
+      {isCompilerOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-hidden"
+          onWheel={(e) => e.stopPropagation()}
+          onClick={(e) => e.target === e.currentTarget && closeCompiler()}
+        >
+          <div className="bg-white rounded-sm w-full max-w-6xl h-[80vh] flex flex-col shadow-2xl">
+            {/* Header */}
+            <div className="flex items-center justify-between p-4 border-b border-gray-200">
+              <h3 className="text-xl font-semibold text-[#000000]">HTML Compiler</h3>
+              <button
+                onClick={closeCompiler}
+                className="p-2 hover:bg-gray-100 rounded-sm transition-colors"
+              >
+                <X className="text-black" size={20} />
+              </button>
+            </div>
+
+            {/* Content */}
+            <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
+              {/* Editor */}
+              <div className="flex-1 flex flex-col border-r border-gray-200">
+                <div className="flex items-center justify-between p-3 bg-gray-50 border-b border-gray-200">
+                  <span className="text-sm font-medium text-gray-700">HTML Code</span>
+                  <button
+                    onClick={runCode}
+                    className="flex items-center gap-2 px-3 py-1.5 bg-[#A435F0] text-white rounded-sm hover:bg-[#8c2ad1] transition-colors text-sm"
+                  >
+                    <Play size={14} />
+                    Run
+                  </button>
+                </div>
+                <textarea
+                  value={currentCode}
+                  onChange={(e) => setCurrentCode(e.target.value)}
+                  className="flex-1 p-4 font-mono text-sm resize-none focus:outline-none bg-gray-50 text-black"
+                  spellCheck={false}
+                />
+              </div>
+
+              {/* Preview */}
+              <div className="flex-1 flex flex-col">
+                <div className="p-3 bg-gray-50 border-b border-gray-200">
+                  <span className="text-sm font-medium text-gray-700">Preview</span>
+                </div>
+                <div className="flex-1 overflow-auto bg-white">
+                  <iframe
+                    srcDoc={`
+                      <!DOCTYPE html>
+                      <html>
+                        <head>
+                          <meta charset="UTF-8">
+                          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                          <style>
+                            body { 
+                              margin: 16px; 
+                              font-family: system-ui, -apple-system, sans-serif;
+                            }
+                          </style>
+                        </head>
+                        <body>
+                          ${compiledOutput}
+                        </body>
+                      </html>
+                    `}
+                    className="w-full h-full border-0"
+                    title="HTML Preview"
+                    sandbox="allow-scripts"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
