@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DevJourney",
-  description: "<DevJourney/> is a place for developers to learn.",
+  title: "CodeWithPratham",
+  description: "<CodeWithPratham/> is a place for developers to learn.",
 };
 
 export default function RootLayout({
