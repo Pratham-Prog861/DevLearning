@@ -256,6 +256,17 @@ const FronFooter = () => {
             <p className="text-gray-600 text-sm mb-2">Simple, Modular UI Components</p>
             <ExternalLink className="w-4 h-4 text-[#A435F0] mt-auto self-end" />
           </Link>
+
+          <Link 
+            href="https://ui.chaicode.com/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex flex-col p-4 border border-gray-200 rounded-sm hover:border-[#A435F0] transition-all duration-300 hover:shadow-lg group"
+          >
+            <h3 className="text-lg font-semibold text-[#000000] group-hover:text-[#A435F0]">Chaicode UI</h3>
+            <p className="text-gray-600 text-sm mb-2">Simple Components Collection of Chai Code</p>
+            <ExternalLink className="w-4 h-4 text-[#A435F0] mt-auto self-end" />
+          </Link>
         </div>
       </div>
     </div>
