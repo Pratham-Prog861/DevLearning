@@ -108,7 +108,7 @@ const GithubTutorial = () => {
       title: "Step 3: git add",
       description: "Stage your changes",
       command: "git add .\n# or\ngit add filename.txt",
-      visual: "� →t 📦 Staging Area",
+      visual: "📦 Staging Area",
       explanation: "Moves changes from working directory to staging area. 'git add .' stages all changes, or you can stage specific files. You're preparing files for commit."
     },
     {
@@ -122,7 +122,7 @@ const GithubTutorial = () => {
       title: "Step 5: git commit",
       description: "Save your changes permanently",
       command: "git commit -m 'Add new feature'",
-      visual: "� C→ 💾 Local Repository",
+      visual: "💾 Local Repository",
       explanation: "Creates a snapshot of staged changes in your local Git history. Each commit has a unique ID (hash). Write clear commit messages to describe what changed."
     },
     {
