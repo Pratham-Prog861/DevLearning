@@ -33,6 +33,21 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/android-chrome-192x192.png" sizes="192x192" />
         <link rel="apple-touch-icon" href="/android-chrome-512x512.png" sizes="512x512" />
 
+        {/* Google Analytics */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');
+          `}
+        </Script>
+
+        {/* Microsoft Clarity */}
         <Script id="clarity-script" strategy="afterInteractive">
           {`
             (function(c,l,a,r,i,t,y){
