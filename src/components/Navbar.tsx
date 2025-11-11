@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
+import SearchBar from './SearchBar';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,6 +18,11 @@ export default function Navbar() {
           <Link href="/" className="flex items-center space-x-2">
             <span className="text-xl font-bold text-[#A435F0]">{"<"} CodeWithPratham {"/>"}</span>
           </Link>
+
+          {/* Search Bar - Desktop */}
+          <div className="hidden md:flex md:flex-1 md:justify-center md:px-8 md:max-w-2xl">
+            <SearchBar />
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center md:space-x-8">
@@ -58,7 +64,10 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white">
+          <div className="md:hidden bg-white border-t border-gray-200">
+            <div className="px-4 py-3">
+              <SearchBar isMobile onClose={toggleMenu} />
+            </div>
             <div className="space-y-1 px-2 pb-3 pt-2">
               <Link
                 href="/"
