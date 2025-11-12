@@ -1,11 +1,11 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { Search, ArrowRight } from "lucide-react";
 import { searchContent, SearchItem } from "@/lib/searchIndex";
 
-const SearchPage = () => {
+const SearchContent = () => {
   const searchParams = useSearchParams();
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<(SearchItem & { score: number })[]>([]);
@@ -198,6 +198,23 @@ const SearchPage = () => {
         )}
       </div>
     </div>
+  );
+};
+
+const SearchPage = () => {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-24 pb-12">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="text-center py-12">
+            <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-gray-300 border-t-[#A435F0]"></div>
+            <p className="mt-4 text-gray-600">Loading search...</p>
+          </div>
+        </div>
+      </div>
+    }>
+      <SearchContent />
+    </Suspense>
   );
 };
 

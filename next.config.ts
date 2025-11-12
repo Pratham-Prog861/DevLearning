@@ -2,9 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  // Commented out for development with API routes
-  // For production on Netlify, the static export works with Netlify Functions
-  // Uncomment this line if you want static export:
+  // Note: 'output: export' is disabled to support API routes for the chatbot
+  // For Netlify deployment, the chatbot uses Netlify Functions instead
   // output: 'export',
   images: {
     unoptimized: true
