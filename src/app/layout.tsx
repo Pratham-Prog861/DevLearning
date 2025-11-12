@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import SmoothScroll from "@/components/SmoothScroll";
 import GlobalSearch from "@/components/GlobalSearch";
+import AIChatbot from "@/components/AIChatbot";
 import Script from "next/script";
 
 const geistSans = Geist({
@@ -66,6 +67,7 @@ export default function RootLayout({
           <Navbar />
           <GlobalSearch />
           {children}
+          <AIChatbot />
         </SmoothScroll>
       </body>
     </html>
