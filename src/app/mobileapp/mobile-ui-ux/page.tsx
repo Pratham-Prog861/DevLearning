@@ -403,13 +403,13 @@ Spacing:
               <ul className="space-y-1 text-gray-700">
                 <li>
                   <code className="bg-white px-2 py-0.5 rounded">iOS HIG</code>{" "}
-                  - Apple's design guidelines
+                  - Apple&apos;s design guidelines
                 </li>
                 <li>
                   <code className="bg-white px-2 py-0.5 rounded">
                     Material Design
                   </code>{" "}
-                  - Google's design system
+                  - Google&apos;s design system
                 </li>
                 <li>
                   <code className="bg-white px-2 py-0.5 rounded">Figma</code> -

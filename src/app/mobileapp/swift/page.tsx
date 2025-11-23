@@ -284,7 +284,7 @@ struct PostsView: View {
         </div>
         <p className="text-gray-600 text-lg mb-8">
           Master Swift and SwiftUI to build native iOS applications. Learn
-          modern iOS development with Apple's latest frameworks.
+          modern iOS development with Apple&apos;s latest frameworks.
         </p>
 
         {/* Video Section */}
@@ -396,7 +396,7 @@ struct PostsView: View {
               </h3>
               <ul className="space-y-1 text-gray-700">
                 <li>✓ Use SwiftUI for new projects</li>
-                <li>✓ Follow Apple's Human Interface Guidelines</li>
+                <li>✓ Follow Apple&apos;s Human Interface Guidelines</li>
                 <li>✓ Use property wrappers effectively</li>
                 <li>✓ Test on real devices when possible</li>
               </ul>

@@ -27,10 +27,11 @@ const TermsOfServicePage = () => {
               1. Agreement to Terms
             </h2>
             <p className="mb-4">
-              By accessing and using DevLearning ("the Service," "we," "our," or
-              "us"), you agree to be bound by these Terms of Service ("Terms").
-              If you disagree with any part of these terms, you may not access
-              the Service.
+              By accessing and using DevLearning (&quot;the Service,&quot;
+              &quot;we,&quot; &quot;our,&quot; or &quot;us&quot;), you agree to
+              be bound by these Terms of Service (&quot;Terms&quot;). If you
+              disagree with any part of these terms, you may not access the
+              Service.
             </p>
             <p>
               These Terms apply to all visitors, users, and others who access or
@@ -143,10 +144,10 @@ const TermsOfServicePage = () => {
             </h3>
             <p className="mb-4">
               You retain ownership of any content you submit, post, or display
-              on or through the Service ("User Content"). By submitting User
-              Content, you grant us a worldwide, non-exclusive, royalty-free
-              license to use, reproduce, modify, and distribute your content in
-              connection with the Service.
+              on or through the Service (&quot;User Content&quot;). By
+              submitting User Content, you grant us a worldwide, non-exclusive,
+              royalty-free license to use, reproduce, modify, and distribute
+              your content in connection with the Service.
             </p>
 
             <h3 className="text-xl font-semibold text-[#000000] mb-3">
@@ -251,9 +252,9 @@ const TermsOfServicePage = () => {
               9. Disclaimer of Warranties
             </h2>
             <p className="mb-4">
-              THE SERVICE IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS. WE
-              MAKE NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
-              TO:
+              THE SERVICE IS PROVIDED ON AN &quot;AS IS&quot; AND &quot;AS
+              AVAILABLE&quot; BASIS. WE MAKE NO WARRANTIES, EXPRESS OR IMPLIED,
+              INCLUDING BUT NOT LIMITED TO:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
               <li>The Service will meet your requirements</li>
@@ -344,7 +345,7 @@ const TermsOfServicePage = () => {
             </h2>
             <p className="mb-4">
               We reserve the right to modify or replace these Terms at any time.
-              If a revision is material, we will provide at least 30 days'
+              If a revision is material, we will provide at least 30 days&apos;
               notice prior to any new terms taking effect.
             </p>
             <p>

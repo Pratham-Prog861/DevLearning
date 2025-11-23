@@ -62,7 +62,7 @@ export const PythonCompiler: React.FC<PythonCompilerProps> = ({
         try {
           setConsoleOutput(["⏳ Loading packages..."]);
           await pyodide.loadPackage(packages);
-        } catch (e) {
+        } catch {
           // Package might already be loaded
         }
       }

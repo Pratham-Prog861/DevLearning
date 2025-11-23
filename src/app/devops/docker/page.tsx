@@ -380,7 +380,7 @@ volumes:
                 <li>✓ Use official base images</li>
                 <li>✓ Minimize layer count</li>
                 <li>✓ Use .dockerignore files</li>
-                <li>✓ Don't run as root user</li>
+                <li>✓ Don&apos;t run as root user</li>
               </ul>
             </div>
           </div>

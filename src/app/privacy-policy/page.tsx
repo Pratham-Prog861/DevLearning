@@ -27,11 +27,11 @@ const PrivacyPolicyPage = () => {
               1. Introduction
             </h2>
             <p className="mb-4">
-              Welcome to DevLearning ("we," "our," or "us"). We are committed to
-              protecting your personal information and your right to privacy.
-              This Privacy Policy explains how we collect, use, disclose, and
-              safeguard your information when you visit our website and use our
-              services.
+              Welcome to DevLearning (&quot;we,&quot; &quot;our,&quot; or
+              &quot;us&quot;). We are committed to protecting your personal
+              information and your right to privacy. This Privacy Policy
+              explains how we collect, use, disclose, and safeguard your
+              information when you visit our website and use our services.
             </p>
             <p>
               Please read this privacy policy carefully. If you do not agree
@@ -232,7 +232,7 @@ const PrivacyPolicyPage = () => {
             </ul>
             <p className="mt-4">
               To exercise these rights, please contact us using the information
-              provided in the "Contact Us" section.
+              provided in the &quot;Contact Us&quot; section.
             </p>
           </section>
 
@@ -250,7 +250,7 @@ const PrivacyPolicyPage = () => {
 
           <section>
             <h2 className="text-2xl font-semibold text-[#000000] mb-4">
-              9. Children's Privacy
+              9. Children&apos;s Privacy
             </h2>
             <p className="mb-4">
               Our services are not intended for children under the age of 13. We
@@ -286,7 +286,7 @@ const PrivacyPolicyPage = () => {
             <p className="mb-4">
               We may update our Privacy Policy from time to time. We will notify
               you of any changes by posting the new Privacy Policy on this page
-              and updating the "Last updated" date.
+              and updating the &quot;Last updated&quot; date.
             </p>
             <p>
               You are advised to review this Privacy Policy periodically for any

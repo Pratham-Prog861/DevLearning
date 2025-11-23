@@ -207,7 +207,7 @@ const Drive = () => {
           <div className="relative inline-block">
             <div className="absolute inset-0 bg-gradient-to-r from-[#A435F0]/20 to-blue-500/20 blur-2xl"></div>
             <p className="relative text-gray-700 text-lg md:text-xl italic px-8 py-4 bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200">
-              "The only way to do great work is to love what you do."
+              &quot;The only way to do great work is to love what you do.&quot;
               <span className="block text-[#A435F0] font-semibold mt-2 not-italic">
                 - Steve Jobs
               </span>
