@@ -27,8 +27,8 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold text-[#000000] mb-4">Legal</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-600 hover:text-[#A435F0] transition-colors duration-200 focus:outline-none focus:text-[#A435F0]">Privacy Policy</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-[#A435F0] transition-colors duration-200 focus:outline-none focus:text-[#A435F0]">Terms of Service</a></li>
+              <li><Link href="/privacy-policy" className="text-gray-600 hover:text-[#A435F0] transition-colors duration-200 focus:outline-none focus:text-[#A435F0]">Privacy Policy</Link></li>
+              <li><Link href="/terms" className="text-gray-600 hover:text-[#A435F0] transition-colors duration-200 focus:outline-none focus:text-[#A435F0]">Terms of Service</Link></li>
             </ul>
           </div>
 
@@ -61,6 +61,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-200 pt-8 mt-8">
           <p className="text-sm text-gray-600">&copy; {new Date().getFullYear()} Developed with ❤️. All rights reserved.</p>
+          <p className="text-sm text-gray-600">Made with love by Pratham Darji</p>
         </div>
       </div>
     </footer>

@@ -88,6 +88,9 @@ const SearchBar: React.FC<SearchBarProps> = ({ isMobile = false, onClose }) => {
       "Tools": "bg-gray-100 text-gray-700",
       "Resources": "bg-yellow-100 text-yellow-700",
       "Career": "bg-indigo-100 text-indigo-700",
+      "DevOps": "bg-blue-100 text-blue-700",
+      "AI & ML": "bg-blue-100 text-blue-700",
+      "Mobile App Development": "bg-blue-100 text-blue-700",
     };
     return colors[category] || "bg-gray-100 text-gray-700";
   };

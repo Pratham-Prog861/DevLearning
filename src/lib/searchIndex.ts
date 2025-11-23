@@ -295,6 +295,192 @@ export const searchIndex: SearchItem[] = [
       "GitHub Git version control repository commit push pull branch merge collaboration",
   },
 
+  // DevOps
+  {
+    id: "devops",
+    title: "DevOps",
+    description: "Learn DevOps principles and practices",
+    category: "DevOps",
+    path: "/devops",
+    keywords: ["devops", "continuous integration", "continuous delivery", "automation", "infrastructure", "operations"],
+    content:
+      "DevOps continuous integration continuous delivery automation infrastructure operations",
+  },
+  {
+    id: "docker-tutorial",
+    title: "Docker Tutorial",
+    description: "Containerization with Docker for developers",
+    category: "DevOps",
+    path: "/devops/docker",
+    keywords: ["docker", "containerization", "containers", "devops", "virtualization"],
+    content:
+      "Docker containerization containers images volumes Dockerfile compose",
+  },
+  {
+    id: "kubernetes-tutorial",
+    title: "Kubernetes Tutorial",
+    description: "Orchestrate containers with Kubernetes",
+    category: "DevOps",
+    path: "/devops/kubernetes",
+    keywords: ["kubernetes", "k8s", "orchestration", "containers", "devops", "cloud native"],
+    content:
+      "Kubernetes k8s container orchestration pods deployments services ingress",
+  },
+  {
+    id: "aws-devops",
+    title: "AWS DevOps",
+    description: "Implement DevOps practices on Amazon Web Services",
+    category: "DevOps",
+    path: "/devops/aws",
+    keywords: ["aws", "cloud", "devops", "amazon web services", "ci/cd", "cloud computing"],
+    content:
+      "AWS Amazon Web Services cloud computing DevOps CI CD EC2 S3 Lambda",
+  },
+  {
+    id: "terraform-tutorial",
+    title: "Terraform Tutorial",
+    description: "Infrastructure as Code with Terraform",
+    category: "DevOps",
+    path: "/devops/terraform",
+    keywords: ["terraform", "infrastructure as code", "iac", "devops", "cloud computing", "aws", "azure", "gcp"],
+    content:
+      "Terraform infrastructure as code IaC cloud computing DevOps AWS Azure GCP",
+  },
+  {
+    id: "cicd",
+    title: "CI CD Pipeline",
+    description: "Automate workflows with CI CD Pipeline",
+    category: "DevOps",
+    path: "/devops/cicd",
+    keywords: ["CI CD Pipeline", "ci/cd", "continuous integration", "continuous delivery", "devops", "automation", "github", "github.com"],
+    content:
+      "CI CD Pipeline continuous integration continuous delivery automation github github.com",
+  },
+
+  // AI & ML
+  {
+    id: "ml-basics",
+    title: "Machine Learning Basics",
+    description: "Introduction to fundamental concepts of Machine Learning",
+    category: "AI & ML",
+    path: "/aiml/machine-learning",
+    keywords: ["machine learning", "ml", "ai", "artificial intelligence", "data science", "algorithms", "supervised learning", "unsupervised learning"],
+    content:
+      "Machine Learning AI artificial intelligence data science algorithms supervised unsupervised learning neural networks deep learning",
+  },
+  {
+    id: "python",
+    title: "Python for AI & ML",
+    description: "Learn Python for AI & Machine Learning",
+    category: "AI & ML",
+    path: "/aiml/python",
+    keywords: ["python", "ai", "machine learning", "ml", "data science", "algorithms", "supervised learning", "unsupervised learning"],
+    content:
+      "Python AI artificial intelligence data science algorithms supervised unsupervised learning neural networks deep learning",
+  },
+  {
+    id: "ai-web-apps",
+    title: "AI Web Apps",
+    description: "Build web applications with AI",
+    category: "AI & ML",
+    path: "/aiml/web-apps",
+    keywords: ["ai", "machine learning", "ml", "data science", "algorithms", "supervised learning", "unsupervised learning"],
+    content:
+      "AI artificial intelligence data science algorithms supervised unsupervised learning neural networks deep learning",
+  },
+  {
+    id: "computer-vision",
+    title: "Computer Vision",
+    description: "Learn Computer Vision for AI & Machine Learning",
+    category: "AI & ML",
+    path: "/aiml/computer-vision",
+    keywords: ["computer vision", "cv", "ai", "machine learning", "ml", "data science", "algorithms", "supervised learning", "unsupervised learning"],
+    content:
+      "Computer Vision AI artificial intelligence data science algorithms supervised unsupervised learning neural networks deep learning",
+  },
+  {
+    id: "nlp",
+    title: "NLP",
+    description: "Learn NLP for AI & Machine Learning",
+    category: "AI & ML",
+    path: "/aiml/nlp",
+    keywords: ["nlp", "natural language processing", "ai", "machine learning", "ml", "data science", "algorithms", "supervised learning", "unsupervised learning"],
+    content:
+      "NLP AI artificial intelligence data science algorithms supervised unsupervised learning neural networks deep learning",
+  },
+  {
+    id: "tensorflow-pytorch",
+    title: "TensorFlow & PyTorch",
+    description: "Learn TensorFlow & PyTorch for AI & Machine Learning",
+    category: "AI & ML",
+    path: "/aiml/tensorflow-pytorch",
+    keywords: ["tensorflow", "pytorch", "ai", "machine learning", "ml", "data science", "algorithms", "supervised learning", "unsupervised learning"],
+    content:
+      "TensorFlow PyTorch AI artificial intelligence data science algorithms supervised unsupervised learning neural networks deep learning",
+  },
+
+  // Mobile App
+  {
+    id: "flutter",
+    title: "Flutter",
+    description: "Learn Flutter for Mobile App Development",
+    category: "Mobile App",
+    path: "/mobileapp/flutter",
+    keywords: ["flutter", "mobile app", "android", "ios", "dart", "ui", "ux", "development", "programming", "coding"],
+    content:
+      "Flutter mobile app android ios dart ui ux development programming coding",
+  },
+  {
+    id: "react-native",
+    title: "React Native",
+    description: "Learn React Native for Mobile App Development",
+    category: "Mobile App",
+    path: "/mobileapp/react-native",
+    keywords: ["react native", "mobile app", "android", "ios", "javascript", "ui", "ux", "development", "programming", "coding"],
+    content:
+      "React Native mobile app android ios javascript ui ux development programming coding",
+  },
+  {
+    id: "kotlin",
+    title: "Kotlin",
+    description: "Learn Kotlin for Mobile App Development",
+    category: "Mobile App",
+    path: "/mobileapp/kotlin",
+    keywords: ["kotlin", "mobile app", "android", "ios", "java", "ui", "ux", "development", "programming", "coding"],
+    content:
+      "Kotlin mobile app android ios java ui ux development programming coding",
+  },
+  {
+    id: "swift",
+    title: "Swift",
+    description: "Learn Swift for Mobile App Development",
+    category: "Mobile App",
+    path: "/mobileapp/swift",
+    keywords: ["swift", "mobile app", "ios", "swiftui", "ui", "ux", "development", "programming", "coding"],
+    content:
+      "Swift mobile app ios swiftui ui ux development programming coding",
+  },
+  {
+    id: "mobile-ui-ux",
+    title: "Mobile UI/UX",
+    description: "Learn Mobile UI/UX for Mobile App Development",
+    category: "Mobile App",
+    path: "/mobileapp/mobile-ui-ux",
+    keywords: ["mobile ui/ux", "mobile app", "android", "ios", "ui", "ux", "development", "programming", "coding"],
+    content:
+      "Mobile UI/UX mobile app android ios ui ux development programming coding",
+  },
+  {
+    id: "deployment",
+    title: "Deployment for Mobile App",
+    description: "Learn Deployment for Mobile App Development",
+    category: "Mobile App",
+    path: "/mobileapp/deployment",
+    keywords: ["deployment", "mobile app", "android", "ios", "ui", "ux", "development", "programming", "coding"],
+    content:
+      "Deployment mobile app android ios ui ux development programming coding",
+  },
+
   // Resources
   {
     id: "resources",
